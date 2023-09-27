@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var feedbacks = ViewData["feedbacks"] as IEnumerable<CP2.Models.Feedback>;
+}
+
+<div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-ride="carousel">
+        <ol class="carousel-indicators"> 
+            @for (var i = 0; i < feedbacks.Count(); i++)
+            {
+                <li data-target="#carouselExampleCaptions" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+            }
+        </ol>
+
+        <!-- Slides do Carrossel -->
+        <div class="carousel-inner">
+            @foreach (var feedback in feedbacks)
+            {
+                <div class="carousel-item @(feedback == feedbacks.First() ? "active" : "")">
+                    <img src=@feedback.produto.url class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>
+                            @(feedback.produto.Nome   )
+                        </h3>
+
+                        <p>@feedback.Stars</p>
+                        <div>
+                            <b-form-rating v-model="value" readonly></b-form-rating>
+                            <div>
+                                @for (var i = 0; i < feedback.Stars; i++)
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <style>
+                .button{
+                    color: black;
+                }
+            </style>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <style>
+                .button{
+                    color: black;
+                }
+            </style>
+        </a>
+    </div>
+</div>
