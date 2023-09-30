@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -9,7 +9,7 @@ html {
 }
 
 html {
-  position: relative;
+  position: absolute;
   min-height: 100%;
 }
 
@@ -18,8 +18,11 @@ body {
 }
 
 img {
-    width: 900px;
-    height: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%; /* Garante que a imagem n�o ultrapasse a largura m�xima */
+    max-height: 720px; /* Limita a altura m�xima da imagem */
+    width: auto;
     --color: #8A9B0F; /* the border color */
     --border: 10px; /* the border thickness*/
     --offset: 20px; /* control the offset*/
@@ -31,7 +34,6 @@ img {
     background: linear-gradient( var(--_c)) var(--_o) var(--_o), linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
     background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
     background-repeat: no-repeat;
-    
     filter: grayscale(.4);
     transition: .5s;
     cursor: pointer;
