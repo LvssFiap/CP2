@@ -81,7 +81,8 @@ thead {
 span {
     color: white;
 }
-
-
-
+/* Heading and text styles */
+h1, h4, p, thead, span, label, span, tr, td {
+    color: white;
+}
 
