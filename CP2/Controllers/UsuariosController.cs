@@ -19,6 +19,8 @@ namespace CP2.Controllers
             _context = context;
         }
 
+    
+
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {

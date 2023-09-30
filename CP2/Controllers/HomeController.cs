@@ -20,7 +20,7 @@ namespace CP2.Controllers
 
         public IActionResult Index()
         {
-
+            
             ViewData["feedbacks"] = _oracleDbContext
                 .Feedbacks
                 .Include(x => x.produto)
@@ -32,8 +32,13 @@ namespace CP2.Controllers
 
         public IActionResult Privacy()
         {
+           
             return View();
         }
+
+     
+
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
